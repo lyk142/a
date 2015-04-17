@@ -75,6 +75,13 @@ EOF
 
 sleep 5
 echo "##### Rebooting machine ... #####"
+#Restart network service
+#service networking restart
+
+#service networking restart
+# ifdown eth0 && ifup eth0
+# ifdown eth1 && ifup eth1
+# ifdown eth2 && ifup eth2
 init 6
 #
 
