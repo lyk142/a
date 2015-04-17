@@ -3,11 +3,20 @@
 
 source config.cfg
 
+-#Update for Ubuntu		
+-apt-get -y install ubuntu-cloud-keyring		
+-echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu" \		
+-"trusty-updates/juno main" > /etc/apt/sources.list.d/cloudarchive-juno.list		
+-		
+-apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y		
+
 echo "##### Configuring hostname for COMPUTE2 node #####"
 sleep 3
 echo "compute2" > /etc/hostname
 hostname -F /etc/hostname
-
+-apt-get install ntp -y		
+-apt-get install python-mysqldb -y		
+-#
 
 ifaces=/etc/network/interfaces
 test -f $ifaces.orig || cp $ifaces $ifaces.orig
