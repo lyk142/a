@@ -1,16 +1,12 @@
-
 #!/bin/bash -ex
 
 source config.cfg
-
 
 echo "##### Configuring hostname for COMPUTE2 node #####"
 sleep 3
 echo "compute2" > /etc/hostname
 hostname -F /etc/hostname
--apt-get install ntp -y		
--apt-get install python-mysqldb -y		
--#
+
 
 ifaces=/etc/network/interfaces
 test -f $ifaces.orig || cp $ifaces $ifaces.orig
@@ -58,3 +54,6 @@ EOF
 
 init 6
 #
+
+
+
